@@ -1,0 +1,75 @@
+{
+    "Setting": {
+        "PollingPeriod" : 60,
+		"EmulatedPlugged" : 0
+    },
+    
+    "Nfc": {
+        "LifeCycle": 5
+    },
+    
+   
+	"Funckey" : [
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+			   "LedOn": 1,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 1	
+			},
+			{
+			    "LedOn": 0,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 0	
+			}
+	],
+
+	"Layout": {
+		"BGImg" : {
+			"Url":	"http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_health_1bit_rle.bin",
+			"x": 0,
+			"y": 0,
+			"w": 1600,
+			"h": 1200
+		},
+		"ImageCompressionMode":2,
+		"PartialImageCount": 0
+
+	},
+	
+	"OTA": {
+
+		"ota_tcon": {
+
+			"ver": "v2.80.19",
+
+			"url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Manager/tcon_v2.80.19.bin"
+
+		},
+
+		"ota_wifi": {
+
+			"ver": "v2.0.8",
+
+			"url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Manager/wifi_ota_v2.0.8.bin"
+		},
+		
+		"ota_mcu": {
+
+			"ver": "v2.80.18",
+			"url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Manager/mcu_ota_v2.80.18.bin"
+		}
+
+	}
+
+
+
+}

@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/jquery.steps.css' %}">
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/jquery.steps.js' %}"></script>
+    <script type="text/javascript">
+    
+        var tableData = [];
+        {% for json in jsons %}
+            tableData["{{ forloop.counter0 }}"] = "{{ json.basename }}";
+        {% endfor %}
+            //var jn = [];
+            //jn['name'] = "{{ json.basename }}";
+            //jn['ext'] = "{{ json.extension }}";
+            //jn['url'] = "{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ json.dirname }}/";
+            //jn['time'] = "{{ json.datetime }}";
+    </script>
+{% endblock %}
+
+        
+{% block title %}
+Signage - 模板
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="main">
+        <div id="template">
+           	<div class="container">
+
+                <div class="actionbar">
+                    <button class="btn btn-add" data-toggle='modal' data-target='#selectJson'>
+                        <svg class="col btn-add-icon" width="32" height="32">
+                        <image xlink:href="{% static 'img/ic-addfile.svg' %}" src="{% static 'img/ic-addfile.png' %}" width="32" height="32"/>
+                        </svg>
+                        <span>新增模板</span>
+                    </button>
+                    <div id="search_area" class="search-container">          
+                        <div class="search-input-container" id="search" onclick="searchBarOpen()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/ic-search.svg' %}" src="{% static 'img/ic-search.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <div class="search-close" id="search_close" onclick="searchBarClose()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/search-close.svg' %}" src="{% static 'img/search-close.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <input type="text" id="search_input" class="search-input-none search-input">
+                    </div>
+				</div>
+                <div class="tableview">
+                    <div class="thead">
+                        <div class="tr row">
+                            <div class="th myshow col-lg-1">序號</div>
+                            <div class="th myshow col-lg-5 tablesorter tablesorter-header">檔案名稱</div>
+                            <div class="th col-lg-1">路徑</div>
+                            <div class="th col-lg-3 tablesorter tablesorter-header">修改時間</div>
+                            <div class="th myshow col-lg-2"></div>
+                        </div>
+                    </div>
+                    <div class="tbody">
+                        {% for json in jsons %}
+                        <div class="tr myshow row">
+                            <div class="td col-lg-1 td-first" data-title="序號">{{ forloop.counter }}</div>
+                            <div class="td col-lg-5" data-title="檔案名稱">{{ json.basename }}</div>
+                            <div class="td col-lg-1" data-title="路徑">
+                                <button class="btn-copy" onclick="copyStringToClipboard('{{ json.dirname }}');">
+                                    <svg width="40" height="40">
+                                        <image xlink:href="{% static 'img/ic-copy.svg' %}" src="{% static 'img/ic-copy.png' %}" width="40" height="40"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="td col-lg-3" data-title="修改時間">{{ json.datetime }}</div>
+                            <div class="td col-lg-2 td-end" data-title="">
+                                <div class="btn-group">
+                                    <button class="btn-action" data-toggle='modal' onclick="modifyJson('{{ json.dirname }}');"><!-- data-target='#modifyKLT' -->
+                                        <svg width="40" height="40" class="align-top">
+                                            <image xlink:href="{% static 'img/btn-edit.svg' %}" src="{% static 'img/btn-edit.png' %}" width="40" height="40"/>
+                                        </svg>
+                                    </button>
+                                    <button class="btn-action" onclick="removeFileName('{{ json.basename }}');" data-toggle='modal' data-target='#remvJson'>
+                                        <svg width="40" height="40" class="align-top">
+                                            <image xlink:href="{% static 'img/btn-delete.svg' %}" src="{% static 'img/btn-delete.png' %}" width="40" height="40"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <form enctype='multipart/form-data' name='newKLT' action='.' method='POST'> 
+        {% csrf_token %}
+		<div class='modal fade bd-example-modal-lg' id='newKLT' tabindex='-1' role='dialog' aria-labelledby='newKLTLabel' aria-hidden='true'> 
+			<div class='modal-dialog modal-lg' role='document' id='device_config'> 
+				<div class='modal-content z-index-2'>
+    				<div class='dialog-header'>
+                        <h4 class='modal-title dialog-title' id='newKLTLabel'>物流箱</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+    				<div class='dialog-body' id="klt_dialog">
+                        <h3>物品資訊</h3>
+    					<section>
+	                        <span class="dialog-txt align-top">收件人地址</span>
+	                        <textarea class="input-area dialog-input-style bottom-10" name="receiver"></textarea>
+
+	                        <span class="dialog-txt">塢門</span>
+	                        <input id='dock_gate' class="input-style dialog-input-style bottom-10" type='text' name='dock_gate'>
+
+	                        <span class="dialog-txt">淨重</span>
+	                        <input id='net_weight' class="input-style dialog-input-style bottom-10" type='text' name='net_weight' placeholder="單位:g">
+
+	                        <span class="dialog-txt">總重</span>
+	                        <input id='gross_weight' class="input-style dialog-input-style bottom-10" type='text' name='gross_weight' placeholder="單位:g">
+		
+		                    <span class="dialog-txt align-top">料號</span>
+		                    <div class="dialog-input-70">
+		                        <input id='part_no1' class="input-style dialog-input-style dialog-input-bottom-0 dialog-input-100" type='text' name='part_no1' placeholder="條碼網址">
+		                        <input id='part_no2' class="input-style dialog-input-style dialog-input-100 bottom-10" type='text' name='part_no2' placeholder="料號">
+	                    	</div>
+	                        
+	                        <span class="dialog-txt">描述</span>
+	                        <input id='description' class="input-style dialog-input-style bottom-10" type='text' name='description'>
+	                    </section>
+                        
+                        <h3>寄件人資訊</h3>
+    					<section>
+	                        <span class="dialog-txt align-top">電話QR code</span>
+	                        <input id='tel_qrcode' class="input-style dialog-input-style bottom-10" type='text' name='tel_qrcode' placeholder="條碼網址">
+
+	                        <span class="dialog-txt">電話</span>
+	                        <input id='tel_num1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='tel_num1' placeholder="EX:+886">
+	                        <input id='tel_num2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='tel_num2'>
+
+	                        <span class="dialog-txt">傳真</span>
+	                        <input id='fax_num1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='fax_num1' placeholder="EX:+886">
+	                        <input id='fax_num2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='fax_num2'>
+
+	                        <span class="dialog-txt align-top">地址QR code</span>
+	                        <input id='address_qrcode' class="input-style dialog-input-style bottom-10" type='text' name='address_qrcode' placeholder="條碼網址">
+	                    </section>
+                        
+                        <h3>檔案名稱</h3>
+    					<section>
+	                        <input type="text" class="d-none" placeholder="" value="addJson" name="func">
+
+	                        <span class="dialog-txt-15">檔案名稱</span>
+	                        <input id='file_name' class="input-style dialog-input-style bottom-10" type='text' name='file_name'>
+	                        <span>.json</span>
+	                        
+	                        <div class="input-error-msg">
+								<svg width="22" height="22">
+	                                <image xlink:href="{% static 'img/icon-error.svg' %}" src="{% static 'img/icon-error.png' %}" width="22" height="22"/>
+	                            </svg>
+								<p class="inline-block">請輸入檔名</p>
+							</div>
+                        </section>
+                        
+                    </div>
+    				<!-- <div class='dialog-footer'>
+                        <span id='err_msg1' name='err_msg1' style='color:Tomato;'></span>
+                        <button type='button' class='btn btn-secondary' data-dismiss='modal' >關閉</button> 
+    				    <button type='submit' class='btn btn-dark btn-90' disabled>新增檔案</button>
+                    </div>  -->
+        		</div>
+            </div>
+        </div> 
+	</form>
+
+    <form enctype='multipart/form-data' name='modifyKLT' action='.' method='POST'> 
+        {% csrf_token %}
+		<div class='modal fade bd-example-modal-lg' id='modifyKLT' tabindex='-1' role='dialog' aria-labelledby='modifyKLTLabel' aria-hidden='true'> 
+			<div class='modal-dialog modal-lg' role='document' id='device_config'> 
+				<div class='modal-content'>
+    				<div class='dialog-header'>
+                        <h4 class='modal-title dialog-title' id='modifyKLTLabel'>顯示檔案名稱</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+    				<div class='dialog-body'>
+                        <input type="text" class="d-none" placeholder="" value="modifyJson" name="func">
+                        <input id='file_name' class="d-none" placeholder="" value="" name="file_name">
+                        <!--
+                        <span class="dialog-txt">檔案名稱</span>
+                        <!--<input id='file_name' class="input-style dialog-input-style dialog-input-bottom-10" type='text' name='file_name'>-->
+                        <!--
+                        <div class="input-error-msg msg-hidden">
+							<svg width="22" height="22">
+                                <image xlink:href="{% static 'img/icon-error.svg' %}" src="{% static 'img/icon-error.png' %}" width="22" height="22"/>
+                            </svg>
+							<p class="inline-block">檔案已經存在</p>
+						</div>
+                        -->
+                        
+                        <span class="dialog-txt align-top">收件人地址</span>
+                        <textarea class="input-area dialog-input-style bottom-10" name="receiver"></textarea>
+
+                        <span class="dialog-txt">塢門</span>
+                        <input id='dock_gate' class="input-style dialog-input-style bottom-10" type='text' name='dock_gate'>
+
+                        <span class="dialog-txt">淨重</span>
+                        <input id='net_weight' class="input-style dialog-input-style bottom-10" type='text' name='net_weight' placeholder="單位:g">
+
+                        <span class="dialog-txt">總重</span>
+                        <input id='gross_weight' class="input-style dialog-input-style bottom-10" type='text' name='gross_weight' placeholder="單位:g">
+	
+	                    <span class="dialog-txt align-top">料號</span>
+	                    <div class="dialog-input-70">
+	                        <input id='part_no1' class="input-style dialog-input-style dialog-input-bottom-0 dialog-input-100" type='text' name='part_no1' placeholder="條碼網址">
+	                        <input id='part_no2' class="input-style dialog-input-style dialog-input-100 bottom-10" type='text' name='part_no2' placeholder="料號">
+                    	</div>
+                        
+                        <span class="dialog-txt">描述</span>
+                        <input id='description' class="input-style dialog-input-style bottom-10" type='text' name='description'>
+                        
+                        <span class="dialog-txt align-top">電話QR code</span>
+                        <input id='tel_qrcode' class="input-style dialog-input-style bottom-10" type='text' name='tel_qrcode' placeholder="條碼網址">
+
+                        <span class="dialog-txt">電話</span>
+                        <input id='tel_num1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='tel_num1' placeholder="EX:+886">
+                        <input id='tel_num2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='tel_num2'>
+
+                        <span class="dialog-txt">傳真</span>
+                        <input id='fax_num1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='fax_num1' placeholder="EX:+886">
+                        <input id='fax_num2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='fax_num2'>
+
+                        <span class="dialog-txt align-top">地址QR code</span>
+                        <input id='address_qrcode' class="input-style dialog-input-style bottom-10" type='text' name='address_qrcode' placeholder="條碼網址">
+                        
+                        
+                    </div>
+    				<div class='dialog-footer'>
+                        <span id='err_msg1' name='err_msg1' style='color:Tomato;'></span>
+                        <button type='button' class='btn btn-secondary' data-dismiss='modal' >關閉</button> 
+    				    <button type='submit' class='btn btn-dark btn-90'>修改檔案</button>
+                    </div>
+        		</div>
+            </div>
+        </div> 
+	</form>
+
+    <form enctype='multipart/form-data' name='newCHT' action='.' method='POST'> 
+        {% csrf_token %}
+		<div class='modal fade bd-example-modal-lg' id='newCHT' tabindex='-1' role='dialog' aria-labelledby='newCHTLabel' aria-hidden='true'> 
+			<div class='modal-dialog modal-lg' role='document' id='device_config'> 
+				<div class='modal-content z-index-2'>
+    				<div class='dialog-header'>
+                        <h4 class='modal-title dialog-title' id='newCHTLabel'>會議室</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+    				<div class='dialog-body' id="cht_dialog">
+                        
+                        <h3>會議室</h3>
+    					<section>
+                        
+                            <span class="dialog-txt">會議室</span>
+                            <input id='room_name' class="input-style dialog-input-style bottom-10" type='text' name='room_name' placeholder="名稱">
+                        
+	                        <span class="dialog-txt">時段一</span>
+	                        <input id='room1' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room1' placeholder="主題">
+	                        <input id='recruiter1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter1' placeholder="招集人">
+                            
+	                        <span class="dialog-txt">時段二</span>
+	                        <input id='room2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room2' placeholder="主題">
+	                        <input id='recruiter2' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter2' placeholder="招集人">
+                            
+	                        <span class="dialog-txt">時段三</span>
+	                        <input id='room3' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room3' placeholder="主題">
+	                        <input id='recruiter3' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter3' placeholder="招集人">
+                            
+	                        <span class="dialog-txt">時段四</span>
+	                        <input id='room4' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room4' placeholder="主題">
+	                        <input id='recruiter4' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter4' placeholder="招集人">
+                            
+	                        <span class="dialog-txt">時段五</span>
+	                        <input id='room5' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room5' placeholder="主題">
+	                        <input id='recruiter5' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter5' placeholder="招集人">
+	                    </section>
+                        
+                        <h3>檔案名稱</h3>
+    					<section>
+	                        <input type="text" class="d-none" placeholder="" value="addCHT" name="func">
+
+	                        <span class="dialog-txt-15">檔案名稱</span>
+	                        <input id='file_name' class="input-style dialog-input-style bottom-10" type='text' name='file_name'>
+	                        <span>.json</span>
+	                        
+	                        <div class="input-error-msg">
+								<svg width="22" height="22">
+	                                <image xlink:href="{% static 'img/icon-error.svg' %}" src="{% static 'img/icon-error.png' %}" width="22" height="22"/>
+	                            </svg>
+								<p class="inline-block">請輸入檔名</p>
+							</div>
+                        </section>
+                        
+                    </div>
+        		</div>
+            </div>
+        </div> 
+	</form>
+
+    <form enctype='multipart/form-data' name='modifyCHT' action='.' method='POST'> 
+        {% csrf_token %}
+		<div class='modal fade bd-example-modal-lg' id='modifyCHT' tabindex='-1' role='dialog' aria-labelledby='modifyCHTLabel' aria-hidden='true'> 
+			<div class='modal-dialog modal-lg' role='document' id='device_config'> 
+				<div class='modal-content'>
+    				<div class='dialog-header'>
+                        <h4 class='modal-title dialog-title' id='modifyCHTLabel'>顯示檔案名稱</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+    				<div class='dialog-body'>
+                        <input type="text" class="d-none" placeholder="" value="modifyCHT" name="func">
+                        <input id='file_name' class="d-none" placeholder="" value="" name="file_name">
+                        
+                        <span class="dialog-txt">會議室</span>
+                        <input id='room_name' class="input-style dialog-input-style bottom-10" type='text' name='room_name' placeholder="名稱">
+                            
+	                    <span class="dialog-txt">時段一</span>
+	                    <input id='room1' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room1' placeholder="主題">
+	                    <input id='recruiter1' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter1' placeholder="招集人">
+                            
+	                    <span class="dialog-txt">時段二</span>
+	                    <input id='room2' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room2' placeholder="主題">
+	                    <input id='recruiter2' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter2' placeholder="招集人">
+                            
+	                    <span class="dialog-txt">時段三</span>
+	                    <input id='room3' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room3' placeholder="主題">
+	                    <input id='recruiter3' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter3' placeholder="招集人">
+                            
+	                    <span class="dialog-txt">時段四</span>
+	                    <input id='room4' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room4' placeholder="主題">
+	                    <input id='recruiter4' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter4' placeholder="招集人">
+                            
+	                    <span class="dialog-txt">時段五</span>
+	                    <input id='room5' class="input-style dialog-input-style dialog-input-48 bottom-10" type='text' name='room5' placeholder="主題">
+	                    <input id='recruiter5' class="input-style dialog-input-style dialog-input-20 bottom-10" type='text' name='recruiter5' placeholder="招集人">
+                    </div>
+    				<div class='dialog-footer'>
+                        <span id='err_msg1' name='err_msg1' style='color:Tomato;'></span>
+                        <button type='button' class='btn btn-secondary' data-dismiss='modal' >關閉</button> 
+    				    <button type='submit' class='btn btn-dark btn-90'>修改檔案</button>
+                    </div>
+        		</div>
+            </div>
+        </div> 
+	</form>
+    
+    <form enctype='multipart/form-data' name='remvJson' action='.' method='POST'>
+        {% csrf_token %}
+        <div class='modal fade' id='remvJson' tabindex='-2' role='dialog' aria-labelledby='json_name' aria-hidden='true'>
+            <div class='modal-dialog' role='document' id='device_remove'>
+                <div class='modal-content'>
+                    <div class='dialog-header'>
+                        <h4 id='json_name' class='modal-title'></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class='dialog-body'>確定要刪除此檔案？ </div>
+                    <input type="text" class="d-none" placeholder="" value="removeJson" name="func">
+                    <input type='hidden' name='file' id='remove_json'>
+                    <div class='dialog-footer'>
+                        <button type='button' class='btn btn-secondary' data-dismiss='modal' >取消</button>
+                        <button type='submit' class='btn btn-red btn-90'>刪除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div class='modal fade' id='selectJson' tabindex='-2' role='dialog' aria-labelledby='json_name' aria-hidden='true'>
+        <div class='modal-dialog' role='document' id='device_remove'>
+            <div class='modal-content'>
+                <div class='dialog-header'>
+                    <h4 id='json_name' class='modal-title'>新增模板</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                    
+                <div class='dialog-body'>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle dropdown-btn dialog-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;">
+                            請選擇模板類型
+                        </button>
+                        <div class="dropdown-menu bottom-10 width-100" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="setLayout('newKLT')">物流箱</a>
+                            <a class="dropdown-item" href="#" onclick="setLayout('newCHT')">會議室</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='dialog-footer'>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

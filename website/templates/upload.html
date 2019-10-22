@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'js/upload.js' %}"></script>
+    
+    <script type="text/javascript">
+    
+    </script>
+{% endblock %}
+
+        
+{% block title %}
+Signage - 檔案
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="main">
+        <div id="upload">
+            
+
+            <div class="container">
+                <div class="actionbar">
+                    
+                    <form enctype="multipart/form-data" id='fileUpload' method="post" action="." class="upload-area">
+                        {% csrf_token %}
+                        <input type="text" class="d-none" placeholder="" value="addFile" name="func">
+                        <div class="btn btn-add" onclick="fileUploadNew();">
+                            <svg class="col btn-add-icon" width="32" height="32">
+                            <image xlink:href="{% static 'img/ic-addfile.svg' %}" src="{% static 'img/ic-addfile.png' %}" width="32" height="32"/>
+                            </svg>
+                            <span>新增檔案</span>
+                        </div>
+
+                        <input id="fileupload" name="file" type="file" class="file-none" multiple="multiple" required="required" onchange="loadingStart();this.form.submit();" accept=".json, .bin, .jpeg, .jpg, .png, .bmp, .raw"/>
+
+                    </form>
+                
+                    <div id="search_area" class="search-container">                    
+                        <div class="search-input-container" id="search" onclick="searchBarOpen()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/ic-search.svg' %}" src="{% static 'img/ic-search.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <div class="search-close" id="search_close" onclick="searchBarClose()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/search-close.svg' %}" src="{% static 'img/search-close.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <input type="text" id="search_input" class="search-input-none search-input">
+                    </div>
+                    <button class="gridview-btn" onclick="fileviewChange('');">
+                        <image id="myImg" class="ic-gridview" src="{% static 'img/ic-gridview.png' %}" width="32" height="32"/>
+                    </button>
+                    <div class="dropdown-container file-dropdown-container">
+                        <div class="dropdown-toggle dropdown-btn" data-toggle="dropdown">
+                            <span id="file_type" tabindex="0" onclick="return true">檔案類型</span>
+                                <svg class="ic-down" width="26" height="26">
+                            <image xlink:href="{% static 'img/ic-down.svg' %}" src="{% static 'img/ic-down.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li href="#" class="dropdown-item" onclick="toggleFext('file')">所有檔案</li>
+                            <li href="#" class="dropdown-item" onclick="toggleFext('fileJPG')">JPG</li>
+                            <li href="#" class="dropdown-item" onclick="toggleFext('filePNG')">PNG</li>
+                            <li href="#" class="dropdown-item" onclick="toggleFext('fileBMP')">BMP</li>
+                            <li href="#" class="dropdown-item" onclick="toggleFext('fileBIN')">BIN</li>
+                            <li href="#" class="dropdown-item" onclick="toggleFext('fileJSON')">JSON</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="tableview" class="file_content" style="display:none;">
+                    {% include 'upload_table.html' %}
+                </div>
+                <div id="gridview" style="display:none;">
+                    {% include 'upload_gridview.html' %}
+                </div>
+                
+                <form enctype='multipart/form-data' name='modFilenameForm' action='.' method='POST'>
+                    {% csrf_token %}
+                    <div class='modal fade' id='modFilename' tabindex='-2' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog' role='document' id='device_config'>
+                            <div class='modal-content'>
+                                <div id='mac_id' class='dialog-header'>
+                                    <!-- h4>11:22:33:44:55:66</h4 -->
+                                    <h4 id='modify_dev' class='modal-title dialog-title' id='exampleModalLabel'>重新命名
+                                    <!-- h4 id='modify_dev' class='modal-title' id='exampleModalLabel'>11:22:33:44:55:66</h4 -->
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class='dialog-body'>
+                                    <input type="text" class="d-none" placeholder="" value="modifyFile" name="func">
+                                    <input type='hidden' id='modify_name' type='text' name='file'>
+                                    
+                                    <div>
+                                        <input id='file_name' class="input-style dialog-input-style" type='text' name='file_name'>
+                                        <span id='file_ext'></span>
+                                    </div>
+                                    
+
+                                </div>
+                                <div class='dialog-footer'>
+                                    <button type='button' class='btn btn-secondary' data-dismiss='modal' >取消</button>
+                                    <button type='submit' class='btn btn-dark btn-90'>完成</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <form enctype='multipart/form-data' name='remvFileForm' action='.' method='POST'>
+                    {% csrf_token %}
+                    <div class='modal fade' id='remvFile' tabindex='-2' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog' role='document' id='device_remove'>
+                            <div class='modal-content'>
+                                <div class='dialog-header'>
+                                    <h4 id='remove_name' class='modal-title' id='exampleModalLabel'></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class='dialog-body'>確定要刪除此檔案？ </div>
+                                <input type="text" class="d-none" placeholder="" value="deleteFile" name="func">
+                                <input type='hidden' name='file' id='remove_file'>
+                                <div class='dialog-footer'>
+                                    <button type='button' class='btn btn-secondary' data-dismiss='modal' >取消</button>
+                                    <button type='submit' class='btn btn-red btn-90'>刪除</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+
+{% endblock %}

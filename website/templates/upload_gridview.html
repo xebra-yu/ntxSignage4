@@ -1,0 +1,54 @@
+{% load static %}
+    
+    <script type="text/javascript">
+    </script>
+    <div class="gridview row">
+        {% for json in jsons %}
+        <div class="col-lg-2 myfile" id="filejson">
+            <div class="grid">
+                <div class="grid-img-area">
+                    <svg width="110" height="110" class="grid-img">
+                        <image xlink:href="{% static 'img/ic_file_json.svg' %}" src="{% static 'img/ic_file_json.png' %}" width="110" height="110"/>
+                    </svg>
+                </div>
+                <p class="img-line">{{ json.basename }}</p>
+                <a tabindex="0" class="btn-more popover-dismiss d-flex align-items-center" data-toggle="popover" data-trigger="focus" style="padding:1px 6px;">
+                    <svg class="ic-more" width="24" height="24">
+                    <image xlink:href="{% static 'img/ic-more.svg' %}" src="{% static 'img/ic-more.png' %}" width="24" height="24"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <script>
+    $('.popover-dismiss').popover({
+        html: true,
+        placement:'bottom',
+        trigger: 'focus',
+        content: $('<nav id="test" class="nav flex-column"><a class="nav-link" href="#" onclick="copyStringToClipboard(\'{{ json.dirname }}\');">路徑</a><a class="nav-link" href="#" onclick="modify(\'{{ json.basename }}\');">修改</a><a class="nav-link" href="#" onclick="remove(\'{{ json.basename }}\');">刪除</a></nav>')//function() { return $('#test').html(); }
+    })
+        </script>
+        {% endfor %}
+        {% for grid in grids %}
+        <div class="col-lg-2 myfile" id="filebin">
+            <div class="grid">
+                <div class="grid-img-area">
+                    <img class="grid-img" src="{% get_media_prefix %}{{ grid.image }}">
+                </div>
+                <p class="img-line">{{ grid.name }}</p>
+                <a tabindex="0" class="btn-more popover-dismiss d-flex align-items-center" data-toggle="popover" data-trigger="focus" style="padding:1px 6px;">
+                    <svg class="ic-more" width="24" height="24">
+                    <image xlink:href="{% static 'img/ic-more.svg' %}" src="{% static 'img/ic-more.png' %}" width="24" height="24"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <script>
+    $('.popover-dismiss').popover({
+        html: true,
+        placement:'bottom',
+        trigger: 'focus',
+        content: $('<nav id="test" class="nav flex-column"><a class="nav-link" href="#" onclick="copyStringToClipboard(\'{{ grid.dirname }}\');">路徑</a><a class="nav-link" href="#" onclick="modify(\'{{ grid.name }}\');">修改</a><a class="nav-link" href="#" onclick="remove(\'{{ grid.name }}\');">刪除</a></nav>')//function() { return $('#test').html(); }
+    })
+        </script>
+        {% endfor %}
+    </div>

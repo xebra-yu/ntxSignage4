@@ -1,0 +1,99 @@
+{
+	"Setting": {
+		"PollingPeriod": 60,
+		"EmulatedPlugged" : 1
+
+	},
+
+	"Nfc": {
+		"LifeCycle": 5
+	},
+
+
+	"Funckey" : [
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+			   "LedOn": 1,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 1	
+			},
+			{
+			    "LedOn": 0,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 0	
+			}
+	],
+
+	"Layout": {
+        "ImageCompressionMode" : 2,
+		"BGImg": {
+			"Url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_health_1bit_rle.bin",
+			"x": 0,
+			"y": 0,
+			"w": 1200,
+			"h": 825
+		},
+
+		"PartialImageCount": 0,
+		"PartialSeqUpdate": 0,
+
+		"LocalMode": 0,
+		"UpdateLocalmage": 0,
+
+		"P1Img": {
+			"Url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_health_1bit_rle.bin",
+			"LocalImageCompressionMode": 2
+		},
+		"P2Img": {
+			"Url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_1_rle_patient.bin",
+			"LocalImageCompressionMode": 2
+
+		},
+		"P3Img": {
+			"Url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_1_rle_meeting.bin",
+			"LocalImageCompressionMode": 2
+
+		},
+		"P4Img":{
+			"Url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/13_3_health_1bit_rle.bin",
+			"LocalImageCompressionMode": 2
+		}
+
+	}
+	"OTA": {
+
+		"ota_tcon": {
+
+			"ver": "v2.80.17",
+
+			"url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Manager/tcon_ota_v2.80.17.bin"
+
+		},
+
+		"ota_wifi": {
+
+			"ver": "v0.1.4",
+
+			"url": "https://54.169.47.77/downloads/wifi_ota_v2.1.4.bin"
+
+		},
+		
+		"ota_mcu": {
+
+			"ver": "v2.80.16",
+			"url": "http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Manager/mcu_ota_v2.80.16.bin"
+		}
+
+	}
+
+
+}

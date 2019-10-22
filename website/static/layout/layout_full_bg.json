@@ -1,0 +1,13 @@
+{
+    "Layout": {
+        "BGImg": {
+            "Url": "",
+            "x": 0,
+            "y": 0,
+            "w": 1200,
+            "h": 825
+        },
+        "ImageCompressionMode": 0,
+        "PartialImageCount": 0
+    }
+}

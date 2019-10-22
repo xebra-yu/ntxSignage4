@@ -1,0 +1,273 @@
+{
+    "version": "00.00.01",
+    "config-type": "layout-update",
+    "layout-name": "layout_v2.json",
+    "object1": {
+        "id": 5003
+    },
+    "object2": {
+        "id": 5004,
+        "posx": 2,
+        "posy": 2,
+        "width": 396,
+        "height": 296
+    },
+    "object3": {
+        "id": 5005,
+        "posx": 4,
+        "posy": 4,
+        "width": 392,
+        "height": 292
+    },
+    "object4": {
+        "id": 5006,
+        "posx": 4,
+        "posy": 62,
+        "width": 396,
+        "height": 62
+    },
+    "object5": {
+        "id": 5006,
+        "ospy": 58,
+        "width": 396,
+        "height": 120
+    },
+    "object6": {
+        "id": 5006,
+        "ospy": 82,
+        "width": 396,
+        "height": 202
+    },
+    "object7": {
+        "id": 5006,
+        "ospy": 24,
+        "width": 160,
+        "height": 226
+    },
+    "object8": {
+        "id": 5006,
+        "ospy": 24,
+        "width": 160,
+        "height": 250
+    },
+    "object9": {
+        "id": 5006,
+        "ospy": 24,
+        "width": 160,
+        "height": 274
+    },
+    "object10": {
+        "id": 5006,
+        "posx": 250,
+        "posy": 91,
+        "width": 396,
+        "height": 91
+    },
+    "object11": {
+        "id": 5006,
+        "posx": 160,
+        "posy": 202,
+        "width": 160,
+        "height": 296
+    },
+    "object12": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 6,
+        "param1": "(1)Receiver"
+    },
+    "field001": {
+        "id": 3010,
+        "ospy": 16,
+        "font-type": 1,
+        "param1": "No 945, Boai St, Jubei City.\r\nHsinchu, Taiwan,\r\n30265 R.O.C."
+    },
+    "object13": {
+        "id": 5006,
+        "posx": 250,
+        "posy": 4,
+        "width": 250,
+        "height": 120
+    },
+    "object14": {
+        "id": 3010,
+        "posx": 262,
+        "posy": 6,
+        "param1": "(2)Dock-Gate"
+    },
+    "field002": {
+        "id": 3010,
+        "posx": 270,
+        "posy": 20,
+        "font-type": 14,
+        "font-color": 2,
+        "param1": "Simon"
+    },
+    "object15": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 64,
+        "font-type": 1,
+        "param1": "(3) Advice Note No (N)"
+    },
+    "object16": {
+        "id": 5012,
+        "posx": 30,
+        "posy": 75,
+        "height": 30,
+        "param1": "3067"
+    },
+    "object17": {
+        "id": 3067,
+        "posx": 30,
+        "posy": 106,
+        "font-type": 1
+    },
+    "object18": {
+        "id": 3010,
+        "posx": 262,
+        "posy": 64,
+        "font-type": 1,
+        "param1": "(4)Net Weight"
+    },
+    "field003": {
+        "id": 3010,
+        "posx": 262,
+        "posy": 80,
+        "font-type": 1,
+        "param1": "346"
+    },
+    "object19": {
+        "id": 3010,
+        "posx": 262,
+        "posy": 93,
+        "font-type": 1,
+        "param1": "(5)Gross Weight"
+    },
+    "field004": {
+        "id": 3010,
+        "posx": 262,
+        "posy": 109,
+        "font-type": 1,
+        "param1": "450"
+    },
+    "object20": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 122,
+        "font-type": 1,
+        "param1": "(6)Part No (P)"
+    },
+    "field005": {
+        "id": 5000,
+        "posx": 30,
+        "posy": 133,
+        "height": 30,
+        "param1": "765-HGD89-1230-123B10-0"
+    },
+    "field006": {
+        "id": 3010,
+        "posx": 30,
+        "posy": 168,
+        "font-type": 13,
+        "param1": "765-HGD89-1230-123B10-0"
+    },
+    "object21": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 205,
+        "font-type": 1,
+        "param1": "(7)Date"
+    },
+    "object22": {
+        "id": 3036,
+        "ospy": 10,
+        "font-type": 1,
+        "param1": "%x %X"
+    },
+    "object23": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 228,
+        "font-type": 1,
+        "param1": "(8)Description"
+    },
+    "field007": {
+        "id": 3036,
+        "ospy": 10,
+        "font-type": 1,
+        "param1": "Layout_v2_new"
+    },
+    "object24": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 252,
+        "font-type": 1,
+        "param1": "(9)Battery(%)"
+    },
+    "object25": {
+        "id": 3030,
+        "posx": 12,
+        "posy": 262,
+        "font-type": 1
+    },
+    "object26": {
+        "id": 3010,
+        "posx": 12,
+        "posy": 276,
+        "font-type": 1,
+        "param1": "(10)Temperature(C)"
+    },
+    "object27": {
+        "id": 3092,
+        "posx": 12,
+        "posy": 286,
+        "font-type": 1
+    },
+    "object28": {
+        "id": 1706,
+        "posx": 170,
+        "posy": 205
+    },
+    "field008": {
+        "id": 5001,
+        "posx": 212,
+        "posy": 208,
+        "width": 1,
+        "height": 1,
+        "qr-ecc": 0,
+        "param1": "+886222266101"
+    },
+    "field009": {
+        "id": 3010,
+        "posx": 170,
+        "posy": 240,
+        "param1": "TEL:\r\n+886-6667766"
+    },
+    "field010": {
+        "id": 3010,
+        "posx": 170,
+        "posy": 268,
+        "param1": "FAX:\r\n+886-"
+    },
+    "object29": {
+        "id": 1703,
+        "posx": 265,
+        "posy": 235
+    },
+    "object30": {
+        "id": 3010,
+        "posx": 300,
+        "posy": 245,
+        "param1": ">"
+    },
+    "field011": {
+        "id": 5001,
+        "posx": 310,
+        "posy": 210,
+        "width": 2,
+        "height": 2,
+        "qr-ecc": 0,
+        "param1": "https://s3-ap-northeast-1.amazonaws.com/iottesttokyo1/devicemaptest2.html"
+    }
+}

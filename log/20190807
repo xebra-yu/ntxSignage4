@@ -1,0 +1,175 @@
+480000
+480000
+480000
+480000
+480000
+480000
+480000
+480000
+480000
+480000
+[2019-08-07 12:25:39] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.1.4&tconver=v2.80.10
+[2019-08-07 12:26:41] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 12:27:30] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:28:32] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:29:34] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:30:35] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:31:46] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:32:48] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:33:50] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:34:52] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:35:54] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:36:56] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:37:58] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:39:00] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:40:02] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:41:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:42:05] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:43:08] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:44:09] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:45:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:46:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:47:24] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:48:25] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:49:27] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:50:29] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:51:31] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:52:34] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:53:36] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:54:37] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:55:39] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:56:41] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:57:43] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 12:58:45] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:00:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:01:08] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:02:09] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:03:11] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:04:13] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:05:15] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:06:17] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:07:19] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:08:21] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:09:23] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:10:25] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:15:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 13:16:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 13:17:11] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:18:13] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:19:15] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:20:17] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:21:19] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:22:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:23:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:24:27] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:25:29] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:26:31] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:27:32] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:28:35] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:29:37] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:30:38] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:31:40] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:32:42] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:33:45] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:34:49] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:35:51] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:36:53] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:37:55] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:38:56] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:39:58] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:41:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:41:50] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:43:00] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:44:08] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:45:11] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:46:13] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:47:15] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:48:16] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:49:18] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:50:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:51:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:52:24] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:53:26] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:54:28] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:55:30] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:56:31] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:57:33] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:58:37] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 13:59:39] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:00:41] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:03:58] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:05:00] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:05:49] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:06:51] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:07:53] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:08:55] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:11:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:12:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:13:11] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:17:12] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:18:14] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:19:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:20:05] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:22:01] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:23:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:23:52] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:24:54] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:25:56] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:26:58] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:28:00] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:29:02] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:30:04] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:31:08] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:32:10] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:33:12] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:34:14] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:36:39] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:37:41] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:38:30] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:39:32] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:41:14] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:42:16] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:43:29] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:44:30] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:45:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:46:21] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:47:23] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:48:25] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:50:25] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 14:51:27] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 14:52:16] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:53:18] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:54:20] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:55:22] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:56:23] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:57:25] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=0&updatelevel=?
+[2019-08-07 14:58:32] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.80.10
+[2019-08-07 15:02:08] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.81.9
+[2019-08-07 15:02:36] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:02:38] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:02:40] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:03:10] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 15:09:41] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&setkey=1
+[2019-08-07 15:12:33] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&mcuver=v2.80.8&wifiver=v2.0.5&tconver=v2.81.9
+[2019-08-07 15:13:01] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:13:03] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:13:05] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&reboot=1&updatelevel=?
+[2019-08-07 15:13:35] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&status=3:0:1
+
+[2019-08-07 15:14:55] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&setkey=1
+[2019-08-07 15:15:07] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&unsetkey=1
+[2019-08-07 15:15:24] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&setkey=2
+[2019-08-07 15:15:34] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&unsetkey=2
+[2019-08-07 15:16:00] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&tagid=1284704010&setkey=3
+[2019-08-07 15:16:27] (POST) http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com/ntxcmd?mac=00:e0:4c:87:00:00&tagid=1284704010&unsetkey=3

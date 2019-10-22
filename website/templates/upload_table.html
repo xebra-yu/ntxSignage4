@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE>
+<!-- <html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset='utf-8'>
+    <title>Sinage</title>
+</head>
+<body> -->
+    
+    <script type="text/javascript">
+    </script>
+    
+    <div class="tableview">
+        <div class="thead">
+            <div class="tr row" id="uploadtable">
+                <div class="th col-lg-4 tablesorter tablesorter-header">名稱</div>
+                <div class="th col-lg-2">檔案類型</div> 
+                <div class="th col-lg-1">路徑</div>
+                <div class="th col-lg-3 tablesorter tablesorter-header">修改時間</div>
+                <div class="th col-lg-2"></div>
+            </div>
+        </div>
+        <div class="tbody tbody-short" id="uploadtable_tbody">
+            {% for file in files %}
+            <div class="tr row table-row myfile" id="file{{ file.extension }}">
+                <div class="td col-lg-4" data-title="名稱">{{ file.basename }}</div>
+                <div class="td col-lg-2" data-title="檔案類型">{{ file.extension }}</div>
+                <div class="td col-lg-1" data-title="路徑">
+                    <button class="btn-copy" onclick="copyStringToClipboard('{{ file.dirname }}');">
+                        <svg width="40" height="40">
+                            <image xlink:href="{% static 'img/ic-copy.svg' %}" src="{% static 'img/ic-copy.png' %}" width="40" height="40"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="td col-lg-3" data-title="修改時間">{{ file.datetime }}</div>
+                <div class="td col-lg-2" data-title="">
+                    <div class="btn-group">
+                        <button class="btn-action" data-toggle='modal' data-target='#modFilename' data-rel="dialog" onclick="modify('{{ file.basename }}')">
+                            <svg width="40" height="40" class="align-top">
+                                <image xlink:href="{% static 'img/btn-edit.svg' %}" src="{% static 'img/btn-edit.png' %}" width="40" height="40"/>
+                            </svg>
+                        </button>
+                        <button class="btn-action" data-toggle='modal' data-target='#remvFile' onclick="remove('{{ file.basename }}')">
+                            <svg width="40" height="40" class="align-top">
+                                <image xlink:href="{% static 'img/btn-delete.svg' %}" src="{% static 'img/btn-delete.png' %}" width="40" height="40"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+        
+<!-- </body>
+</html> -->

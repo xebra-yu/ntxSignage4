@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=window.innerWidth, height=window.innerHeight, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <script type="text/javascript">
+    
+    </script>
+    
+	<title>Login</title>
+</head>
+<body>
+	<div class="container">
+		<div class="login-container">
+			<div class="row login-content-area">
+				<div class="col-1-2 login-image-area">
+					<svg class="login-image login-image-txt">
+                        <image xlink:href="{% static 'img/login-image-txt.svg' %}" src="{% static 'img/login-image-txt.png' %}" width="100%" height="100%"/>
+                    </svg>
+                    <svg class="login-image login-image-icon" width="520">
+                    	<image xlink:href="{% static 'img/login-image-icon.svg' %}" src="{% static 'img/login-image-icon.png' %}" width="100%" height="100%"/>
+                    </svg>
+				</div>
+				<div class="col-1-2 login-form-area">
+					<div class="login-form">
+						<div class="login-form-bg">
+	                        <form class="login-form-element-area" action='.' method='POST'>
+	                            {% csrf_token %}
+								<h4 class="login-form-title">登入</h4>
+								<span class="login-form-title">Logistic Tag</span>
+								<input type="text" name="username" class="input-style" placeholder="帳號">
+								<input type="password" name="pwd" class="input-style" placeholder="密碼">
+								<div class="error-msg">
+									{% if messages %}
+									<svg width="22" height="22">
+                                        <image xlink:href="{% static 'img/icon-error.svg' %}" src="{% static 'img/icon-error.png' %}" width="22" height="22"/>
+                                    </svg>
+									{% endif %}
+									<p class="inline-block">{{messages}}</p>
+								</div>
+								<input type="submit" name="login" value="登入" class="btn-dark">
+	                        </form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

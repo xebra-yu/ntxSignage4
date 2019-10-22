@@ -1,0 +1,62 @@
+{
+    "Setting": {
+        "PollingPeriod" : 60,
+		"EmulatedPlugged" : 0
+    },
+    
+    "Nfc": {
+        "LifeCycle": 5
+    },
+    
+   
+	"Funckey" : [
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+            	"LedOn": 1,
+        		"SetByNfc": 0,
+				"UnsetByNfc": 0	
+			},
+			{
+			   "LedOn": 1,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 1	
+			},
+			{
+			    "LedOn": 1,
+        		"SetByNfc": 1,
+				"UnsetByNfc": 1	
+			}
+	],
+
+	"Layout": {
+		"BGImg" : {
+			"Url":	"http://ec2-52-221-235-171.ap-southeast-1.compute.amazonaws.com:8033/media/Netronix/patient1.bin",
+			"x": 0,
+			"y": 0,
+			"w": 1600,
+			"h": 1200
+		},
+		"ImageCompressionMode":2,
+		"PartialImageCount": 0,
+
+	},
+	
+	"OTA": {
+
+		"ota_tcon": {
+
+			"ver": "v0.0.10",
+
+			"url": "http://nws.netronixinc.com:9090/ntxmedia/IT8951_3_0_10.bin"
+
+		}
+
+	}
+
+
+
+}

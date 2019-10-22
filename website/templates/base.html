@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/dropzone.css' %}">
+        
+        {% block css %}
+        {% endblock %}
+        
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/dropzone.js' %}"></script>
+        <script src="{% static 'js/jquery.blockUI.js' %}"></script>
+        
+        <script src="{% static 'js/cms.js' %}"></script>
+        <script src="{% static 'js/ui.js' %}"></script>
+
+
+        <script type="text/javascript">
+            $(window).resize(function () { 
+                closeNav();
+            });
+            
+            var j = 0;
+            var errs = [];
+            {% for message in messages %}
+                errs[j++] = "{{ message }}";
+            {% endfor %}
+            
+            $(document).ready(function() {
+                
+                if(errs.length) {
+                    $('#messageModal').modal('toggle');
+                }
+            });
+        </script>
+        
+        {% block js %}
+        {% endblock %}
+        
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+    </head>
+    
+    
+    <body>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="topnav">
+                    <button type="button" class="topnav-btn" id="topnav_btn_open_menu" onclick="openNav()"> 
+                        <a class="nav-link active" href="#e">
+                            <svg class="col topnav-btn-icon">
+                                <image xlink:href="{% static 'img/btn-menu-40.svg' %}" src="{% static 'img/btn-menu-40.png' %}" width="40" height="40"/>
+                            </svg>
+                        </a>
+                    </button> 
+                    <button type="button" class="topnav-btn topnav-btn-right" id="topnav_search" onclick="topNavSearchbarOpen()"> 
+                        <a class="nav-link active" href="#">
+                            <svg class="col topnav-btn-icon">
+                                <image xlink:href="{% static 'img/btn-search-w.svg' %}" src="{% static 'img/btn-search-w.png' %}" width="40" height="40"/>
+                            </svg>
+                        </a>
+                    </button>
+                    <button type="button" class="topnav-btn  topnav-btn-right topnav-btn-close" id="topnav_btn_search_close" onclick="topNavSearchbarClose()">
+                        <a class="nav-link" href="#">
+                            <svg class="col topnav-btn-icon">
+                                <image xlink:href="{% static 'img/btn-menu-close-40.svg' %}" src="{% static 'img/btn-menu-close-40.png' %}" width="40" height="40"/>
+                            </svg>
+                        </a>
+                    </button>   
+                    <div class="topnav-search-bar-container" id="topnav_search_bar_container">
+                        <div class="topnav-search-input-container" id="topnav_search_input_container" onclick="">
+                            <svg class="topnav-btn-right" width="26" height="26">
+                            <image xlink:href="{% static 'img/ic-search.svg' %}" src="{% static 'img/ic-search.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="topnav-btn topnav-btn-close topnav-btn-close-menu" id="topnav_btn_close_menu" onclick="closeNav()">
+                    <a class="nav-link" href="#">
+                        <svg class="col topnav-btn-icon">
+                            <image xlink:href="{% static 'img/btn-menu-close-40.svg' %}" src="{% static 'img/btn-menu-close-40.png' %}" width="40" height="40"/>
+                        </svg>
+                    </a>
+                </button>              
+                <div class="sidenav col" id="menu">
+                    <svg class="col sidenav-device-image" height="62" width="62">
+                        <image xlink:href="{% static 'img/device-image.svg' %}" src="{% static 'img/device-image.png' %}" width="62" height="62"/>
+                    </svg>
+                    <p class="p-12">{{ name }}</p>
+                    <p class="p-10">{{ organization }}</p>
+                    <hr class="line" />
+                    <nav>
+                        <a id="device_menu" class="nav-link" href="/device">
+                            <img class="svg" src="{% static 'img/ic-device.svg' %}">
+                            <span>裝置</span>
+                        </a>
+                        <a id="upload_menu" class="nav-link" href="/upload">
+                            <img class="svg" src="{% static 'img/ic-file.svg' %}">
+                            <span class="nav-txt">檔案</span>
+                        </a>
+                        <a id="template_menu" class="nav-link" href="/template">
+                            <img class="svg" src="{% static 'img/ic-template.svg' %}">
+                            <span class="nav-txt">模板</span>
+                        </a>
+                    </nav>
+                    <hr class="line" />
+                    <a class="nav-logout" href="/logout">
+                        <img class="svg" src="{% static 'img/ic-logout.svg' %}">
+                        <span>登出</span>
+                    </a>
+                </div>
+                
+                {% block content %}
+                {% endblock %}
+                
+            </div>
+        </div>
+        
+        <!-- message -->
+		<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body m-1">
+                        {% for message in messages %}
+                        <div class='alert alert-{{message.tags}} fade show'>{{message}}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary btn-dark" data-dismiss="modal">確認</button>
+                    </div>
+                </div>
+		    </div>
+		</div>
+        
+    </body>
+</html>

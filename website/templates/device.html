@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'js/device.js' %}"></script>
+    
+    <script type="text/javascript">
+    
+        var tableData = [];
+        {% for tag_org in tag_orgs %}
+            var tag = [];
+            tag['mac'] = "{{ tag_org.tag.mac }}";
+            tag['name'] = "{{ tag_org.tag.name }}";
+            tag['level'] = "{{ tag_org.tag.level }}";
+            tag['owner'] = "{{ tag_org.tag.owner }}";
+            tag['json'] = "{{ tag_org.tag.json }}";
+            tableData["{{ forloop.counter0 }}"] = tag;
+        {% endfor %}
+        
+    </script>
+{% endblock %}
+
+        
+{% block title %}
+Signage - 裝置
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="main">
+        <div id="device">
+            
+
+            <div class="container">
+                <div class="actionbar">    
+                    <div id="search_area" class="search-container">          
+                        <div class="search-input-container" id="search" onclick="searchBarOpen()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/ic-search.svg' %}" src="{% static 'img/ic-search.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <div class="search-close" id="search_close" onclick="searchBarClose()">
+                            <svg width="26" height="26">
+                            <image xlink:href="{% static 'img/search-close.svg' %}" src="{% static 'img/search-close.png' %}" width="26" height="26"/>
+                            </svg>
+                        </div>
+                        <input type="text" id="search_input" class="search-input-none search-input">
+                    </div>
+                    <div class="dropdown-container">
+                        <div class="dropdown-toggle dropdown-btn" data-toggle="dropdown">
+                            <span id="lvl_value" tabindex="0" onclick="return true">更新等級</span>
+                            <svg class="ic-down" width="26" height="26">
+                        <image xlink:href="{% static 'img/ic-down.svg' %}" src="{% static 'img/ic-down.png' %}" width="26" height="26"/>
+                        </svg>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li href="#" class="dropdown-item" onclick="toggleLi('updatelevel')">更新等級</a>
+                            <li href="#" class="dropdown-item" onclick="toggleLi('updatelevel0')">更新等級0</a>
+                            <li href="#" class="dropdown-item" onclick="toggleLi('updatelevel1')">更新等級1</a>
+                            <li href="#" class="dropdown-item" onclick="toggleLi('updatelevel2')">更新等級2</a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tableview">
+                    <div class="thead">
+                        <div class="tr row" id="updatelevelfield">
+                            <div class="th myshow col-lg-1">序號</div>
+                            <div class="th myshow col-lg-2 tablesorter tablesorter-header">MAC</div>
+                            <div class="th myshow col-lg-2 tablesorter tablesorter-header">裝置名稱</div>
+                            <div class="th myshow col-lg-1">更新等級</div>
+                            <div class="th myshow col-lg-1 tablesorter tablesorter-header">保管人</div>
+                            <div class="th myshow col-lg-3 tablesorter tablesorter-header">檔案</div>
+                            <div class="th myshow col-lg-2"></div>
+                        </div>
+                    </div>
+                    <div class="tbody" id="updatelevelfield_tbody">
+                        {% for tag_org in tag_orgs %}
+                        <div class="tr row table-row myfile myshow" id="updatelevel{{ tag_org.tag.level }}">
+                            <div class="td col-lg-1 td-first" data-title="序號">{{ forloop.counter }}</div>
+                            <div class="td col-lg-2" data-title="MAC">{{ tag_org.tag.mac }}</div>
+                            <div class="td col-lg-2" data-title="裝置名稱">{{ tag_org.tag.name }}</div>
+                            <div class="td col-lg-1" data-title="更新等級">{{ tag_org.tag.level }}</div>
+                            <div class="td col-lg-1" data-title="保管人">{{ tag_org.tag.owner }}</div>
+                            <div class="td col-lg-3" data-title="檔案">{{ tag_org.tag.tag_file }}</div>
+                            <div class="td col-lg-2 td-end" data-title="">
+                                <div class="btn-group">
+                                    <button class="btn-action" data-toggle='modal' data-target='#modUsrDev' onclick="modiDev(tableData['{{ forloop.counter0 }}']);">
+                                        <svg width="40" height="40" class="align-top">
+                                            <image xlink:href="{% static 'img/btn-edit.svg' %}" src="{% static 'img/btn-edit.png' %}" width="40" height="40"/>
+                                        </svg>
+                                    </button>
+
+                                    <button class="btn-action" onclick="remvMac('{{ tag_org.tag.mac }}');" data-toggle='modal' data-target='#remvDev'>
+                                        <svg width="40" height="40" class="align-top">
+                                            <image xlink:href="{% static 'img/btn-delete.svg' %}" src="{% static 'img/btn-delete.png' %}" width="40" height="40"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            
+            <form enctype='multipart/form-data' name='modUsrDevForm' action='.' method='POST'>
+                {% csrf_token %}
+                <div class='modal fade' id='modUsrDev' tabindex='-2' role='dialog' aria-labelledby='modify_dev' aria-hidden='true'>
+                    <div class='modal-dialog' role='document' id='device_config'>
+                        <div class='modal-content'>
+                        
+                            <div id='mac_id' class='dialog-header'>
+                                <h4 id='modify_dev' class='modal-title dialog-title'></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class='dialog-body'>
+                                <input type="text" class="d-none" placeholder="" name="func" value="modifyDevice">
+                                <input type='hidden' id='modify_mac' type='text' name='modify_mac'>
+                                <div>
+                                    <span class="dialog-txt">裝置名稱</span>
+                                    <input id='dev_name' class="input-style dialog-input-style bottom-20" type='text' name='dev_name'>
+                                </div>
+                                <div>
+                                    <span class="dialog-txt">更新等級</span>
+                                    <input type="hidden" id="set_lvl_value" name="level">
+                                    <div id="sel" class="dropdown-toggle dropdown-btn dialog-dropdown bottom-20" data-toggle="dropdown">
+                                        <span id="set_lvl" name="set_lvl"></span>
+                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <li href="#" class="dropdown-item" onclick="setLevel(0)" >更新等級0</li>
+                                        <li href="#" class="dropdown-item" onclick="setLevel(1)" >更新等級1</li>
+                                        <li href="#" class="dropdown-item" onclick="setLevel(2)" >更新等級2</li>
+                                        <li href="#" class="dropdown-item" onclick="setLevel(3)" >更新等級3</li>
+                                        <li href="#" class="dropdown-item" onclick="setLevel(9)" >更新等級9</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <span class="dialog-txt">保管人</span>
+                                    <input id='keeper' class="input-style dialog-input-style bottom-20" type='text' name='keeper'>
+                                </div>
+                                <div>
+                                    <span class="dialog-txt">檔案上傳</span>
+                                </div>
+                                
+                                <div class="dialog-row">
+                                
+                                    <div class="dropdown-toggle dropdown-btn dialog-dropdown dialog-dropdown-short" data-toggle="dropdown">
+                                        <span id="upload_txt">從裝置</span>
+                                    </div>
+                                    
+                                    <ul class="dropdown-menu">
+                                        <li href="#" class="dropdown-item device-upload" onclick="fileUpload();">從裝置中選取</li>
+                                        <li href="#" class="dropdown-item" onclick="serverUpload();" >從伺服器上選取</li>
+                                    </ul>
+                                    
+                                    <input id='sel_file' type="file" class="file-none" name='tagfile' />
+                                    
+                                    <div id="device_file" class="input-style dialog-input-style dialog-input-70" name='file_load' onclick="fileUpload();">
+                                        <span id="set_file" class="file-info">檔案名稱</span>
+                                    </div>
+                                    
+                                    <div id="server_file" class="inline-block dialog-server-dropdpwn">
+                                        <div id="json_drop" class="dropdown-toggle dropdown-btn dialog-dropdown dialog-dropdown-long" data-toggle="dropdown"></div>
+                                        <span id='myjsonfile'></span>
+                                        <ul class="dropdown-menu">
+                                            <li href="#" value="" class="dropdown-item" onclick="setJson('None')">None</li>
+                                            {% for json in jsons %}
+                                            <li href="#" class="dropdown-item" onclick="setJson('{{ json.basename }}')">{{ json.basename }}</li>
+                                            {% endfor %}
+                                            {% for bin in bins %}
+                                            <li href="#" class="dropdown-item" onclick="setJson('{{ bin.basename }}')">{{ bin.basename }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        <input id="set_file_value" type="hidden" name="tagfile">
+                                    </div>
+                                    
+                                </div>
+
+                                
+                            </div>
+                            <div class='dialog-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal' >關閉</button>
+                                <button type='submit' class='btn btn-dark btn-90'>修改裝置</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            
+            <form enctype='multipart/form-data' name='confirmRemv' action='.' method='POST'>
+                {% csrf_token %}
+                <div class='modal fade' id='remvDev' tabindex='-2' role='dialog' aria-labelledby='remove_mac' aria-hidden='true'>
+                    <div class='modal-dialog' role='document' id='device_remove'>
+                        <div class='modal-content'>
+                            <div class='dialog-header'>
+                                <h4 id='remove_mac' class='modal-title dialog-title'></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class='dialog-body'>確定要清除此裝置？ </div>
+                            <input type="text" class="d-none" placeholder="" value="deleteTag" name="func">
+                            <input type='hidden' name='clean_mac' id='clean_mac'>
+                            <div class='dialog-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal' >取消</button>
+                                <button type='submit' class='btn btn-red btn-90'>清除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            
+        </div>
+    </div>
+
+{% endblock %}
